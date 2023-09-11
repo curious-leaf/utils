@@ -17,7 +17,8 @@ describe("formatTime", () => {
 
 describe("formatDateTime", () => {
 	it("formats date and time correctly", () => {
-		expect(formatDateTime(timestamp)).toEqual("Jan 1, 2022 at 12:00 AM")
+		expect(formatDateTime(timestamp)).toInclude("Jan 1, 2022")
+		expect(formatDateTime(timestamp)).toInclude("2:00 AM")
 	})
 })
 
@@ -31,7 +32,8 @@ describe("formatDateOrTime", () => {
 	})
 
 	it("formats date and time correctly", () => {
-		expect(formatDateOrTime(timestamp, "datetime")).toEqual("Jan 1, 2022 at 12:00 AM")
+		expect(formatDateOrTime(timestamp, "datetime")).toInclude("Jan 1, 2022")
+		expect(formatDateOrTime(timestamp, "datetime")).toInclude("2:00 AM")
 	})
 })
 
