@@ -1,4 +1,4 @@
-name: "🚀 Npm Publish"
+name: "🚀 Publish to NPM"
 
 on:
   push:
@@ -11,9 +11,9 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "16"
       - uses: oven-sh/setup-bun@v1
-      - run: bun test
+      - run: bun test && bun run build
       - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
