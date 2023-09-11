@@ -9,6 +9,10 @@
     "name": "Piotr Kulpinski",
     "url": "https://kulpinski.co"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/curious-leaf/utils.git"
+  },
   "scripts": {
     "build": "bun build ./index.ts --outdir ./dist"
   },
