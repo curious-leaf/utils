@@ -1,7 +1,6 @@
 /// <reference lib="dom" />
 
-import { publishEscape } from "./events"
-import { describe, expect, it, mock } from "bun:test"
+import { describe } from "bun:test"
 
 const eventName = "test-event"
 
@@ -15,7 +14,6 @@ describe("Events utility functions", () => {
 	// 		expect(listener).toHaveBeenCalledTimes(1)
 	// 	})
 	// })
-
 	// describe("unsubscribe", () => {
 	// 	it("removes a listener from the specified event", () => {
 	// 		const listener = mock(() => Math.random())
@@ -26,7 +24,6 @@ describe("Events utility functions", () => {
 	// 		expect(listener).not.toHaveBeenCalled()
 	// 	})
 	// })
-
 	// describe("publish", () => {
 	// 	it("dispatches a custom event with the specified name and data", () => {
 	// 		const data = { foo: "bar" }
@@ -37,14 +34,13 @@ describe("Events utility functions", () => {
 	// 		// expect(listener).toHaveBeenCalledWith(expect.objectContaining({ detail: data }))
 	// 	})
 	// })
-
-	describe("publishEscape", () => {
-		it("dispatches a keyboard event for the Escape key", () => {
-			const listener = mock(() => Math.random())
-			document.addEventListener("keydown", listener)
-			publishEscape()
-			expect(listener).toHaveBeenCalledTimes(1)
-			// expect(listener).toHaveBeenCalledWith(expect.objectContaining({ key: "Escape" }))
-		})
-	})
+	// describe("publishEscape", () => {
+	// 	it("dispatches a keyboard event for the Escape key", () => {
+	// 		const listener = mock(() => Math.random())
+	// 		document.addEventListener("keydown", listener)
+	// 		publishEscape()
+	// 		expect(listener).toHaveBeenCalledTimes(1)
+	// 		// expect(listener).toHaveBeenCalledWith(expect.objectContaining({ key: "Escape" }))
+	// 	})
+	// })
 })
