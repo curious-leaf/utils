@@ -12,11 +12,11 @@ type FormatStyles = "full" | "long" | "medium" | "short"
  * @returns The formatted date string.
  */
 export const formatDate = (
-  timestamp: string | number | Date,
-  dateStyle: FormatStyles = "medium",
-  locale = "en",
+	timestamp: string | number | Date,
+	dateStyle: FormatStyles = "medium",
+	locale = "en-US",
 ) => {
-  return new Date(timestamp).toLocaleString(locale, { dateStyle })
+	return new Date(timestamp).toLocaleString(locale, { dateStyle })
 }
 
 /**
@@ -27,11 +27,11 @@ export const formatDate = (
  * @returns The formatted time string.
  */
 export const formatTime = (
-  timestamp: string | number | Date,
-  timeStyle: FormatStyles = "short",
-  locale = "en",
+	timestamp: string | number | Date,
+	timeStyle: FormatStyles = "short",
+	locale = "en-US",
 ) => {
-  return new Date(timestamp).toLocaleString(locale, { timeStyle })
+	return new Date(timestamp).toLocaleString(locale, { timeStyle })
 }
 
 /**
@@ -43,12 +43,12 @@ export const formatTime = (
  * @returns The formatted date and time string.
  */
 export const formatDateTime = (
-  timestamp: string | number | Date,
-  dateStyle: FormatStyles = "medium",
-  timeStyle: FormatStyles = "short",
-  locale = "en",
+	timestamp: string | number | Date,
+	dateStyle: FormatStyles = "medium",
+	timeStyle: FormatStyles = "short",
+	locale = "en-US",
 ) => {
-  return new Date(timestamp).toLocaleString(locale, { dateStyle, timeStyle })
+	return new Date(timestamp).toLocaleString(locale, { dateStyle, timeStyle })
 }
 
 /**
@@ -61,20 +61,20 @@ export const formatDateTime = (
  * @returns The formatted date or time string.
  */
 export const formatDateOrTime = (
-  timestamp: string | number | Date,
-  type: "date" | "time" | "datetime",
-  dateStyle: FormatStyles = "medium",
-  timeStyle: FormatStyles = "short",
-  locale = "en",
+	timestamp: string | number | Date,
+	type: "date" | "time" | "datetime",
+	dateStyle: FormatStyles = "medium",
+	timeStyle: FormatStyles = "short",
+	locale = "en-US",
 ) => {
-  switch (type) {
-    case "date":
-      return formatDate(timestamp, dateStyle, locale)
-    case "time":
-      return formatTime(timestamp, timeStyle, locale)
-    default:
-      return formatDateTime(timestamp, dateStyle, timeStyle, locale)
-  }
+	switch (type) {
+		case "date":
+			return formatDate(timestamp, dateStyle, locale)
+		case "time":
+			return formatTime(timestamp, timeStyle, locale)
+		default:
+			return formatDateTime(timestamp, dateStyle, timeStyle, locale)
+	}
 }
 
 /**
@@ -84,9 +84,9 @@ export const formatDateOrTime = (
  * @returns The estimated read time in minutes.
  */
 export const getReadTime = (content: string | null, wpm = 265): number => {
-  if (!content) {
-    return 0
-  }
+	if (!content) {
+		return 0
+	}
 
-  return Math.ceil(content.trim().split(/\s+/).length / wpm)
+	return Math.ceil(content.trim().split(/\s+/).length / wpm)
 }
