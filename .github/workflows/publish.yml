@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
+      - uses: oven-sh/setup-bun@v1
       - run: bun test
       - uses: JS-DevTools/npm-publish@v2
         with:
