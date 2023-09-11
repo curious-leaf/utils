@@ -2,8 +2,6 @@
  * Utility functions related to time.
  */
 
-type FormatStyles = "full" | "long" | "medium" | "short"
-
 /**
  * Formats a date according to the specified options.
  * @param timestamp - The timestamp to format.
@@ -13,7 +11,7 @@ type FormatStyles = "full" | "long" | "medium" | "short"
  */
 export const formatDate = (
 	timestamp: string | number | Date,
-	dateStyle: FormatStyles = "medium",
+	dateStyle: Intl.DateTimeFormatOptions["timeStyle"] = "medium",
 	locale = "en-US",
 ) => {
 	return new Date(timestamp).toLocaleString(locale, { dateStyle })
@@ -28,10 +26,10 @@ export const formatDate = (
  */
 export const formatTime = (
 	timestamp: string | number | Date,
-	timeStyle: FormatStyles = "short",
+	timeStyle: Intl.DateTimeFormatOptions["timeStyle"] = "short",
 	locale = "en-US",
 ) => {
-	return new Date(timestamp).toLocaleString(locale, { timeStyle })
+	return new Date(timestamp).toLocaleTimeString(locale, { timeStyle })
 }
 
 /**
@@ -44,8 +42,8 @@ export const formatTime = (
  */
 export const formatDateTime = (
 	timestamp: string | number | Date,
-	dateStyle: FormatStyles = "medium",
-	timeStyle: FormatStyles = "short",
+	dateStyle: Intl.DateTimeFormatOptions["timeStyle"] = "medium",
+	timeStyle: Intl.DateTimeFormatOptions["timeStyle"] = "short",
 	locale = "en-US",
 ) => {
 	return new Date(timestamp).toLocaleString(locale, { dateStyle, timeStyle })
@@ -63,8 +61,8 @@ export const formatDateTime = (
 export const formatDateOrTime = (
 	timestamp: string | number | Date,
 	type: "date" | "time" | "datetime",
-	dateStyle: FormatStyles = "medium",
-	timeStyle: FormatStyles = "short",
+	dateStyle: Intl.DateTimeFormatOptions["timeStyle"] = "medium",
+	timeStyle: Intl.DateTimeFormatOptions["timeStyle"] = "short",
 	locale = "en-US",
 ) => {
 	switch (type) {
