@@ -1,0 +1,21 @@
+{
+  "name": "@curiousleaf/utils",
+  "description": "A lightweight set of utilities",
+  "version": "1.0.0",
+  "license": "MIT",
+  "module": "index.ts",
+  "type": "module",
+  "author": {
+    "name": "Piotr Kulpinski",
+    "url": "https://kulpinski.co"
+  },
+  "scripts": {
+    "build": "bun build ./index.ts --outdir ./dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bun-types": "latest",
+    "rome": "latest",
+    "typescript": "latest"
+  }
+}
