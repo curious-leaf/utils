@@ -116,14 +116,20 @@ export function isTruthy<T>(value?: T | undefined | null | false): value is T {
 /**
  * Get the initials from a string
  * @param value A string to get the initials from
+ * @param limit The maximum number of initials to return
  * @returns The initials from the string
  */
-export const getInitials = (value?: string | null) => {
+export const getInitials = (value?: string | null, limit = 0) => {
 	if (!value) {
 		return ""
 	}
 
-	const names = value.trim().split(" ").filter(isTruthy)
+	const values = value.trim().split(" ").filter(isTruthy)
+	const initials = values.map((name) => name.charAt(0).toUpperCase()).join("")
 
-	return names.map((name) => name.charAt(0).toUpperCase()).join("")
+	if (limit > 0) {
+		return initials.slice(0, limit)
+	}
+
+	return initials
 }

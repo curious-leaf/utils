@@ -90,9 +90,43 @@ describe("isTruthy", () => {
 })
 
 describe("getInitials", () => {
-	it("gets the initials from a string", () => {
-		expect(getInitials("John Doe")).toEqual("JD")
-		expect(getInitials("jane doe")).toEqual("JD")
+	it("should return empty string if value is undefined", () => {
+		expect(getInitials(undefined)).toEqual("")
+	})
+
+	it("should return empty string if value is null", () => {
+		expect(getInitials(null)).toEqual("")
+	})
+
+	it("should return empty string if value is an empty string", () => {
 		expect(getInitials("")).toEqual("")
+	})
+
+	it("should return the initials of a single name", () => {
+		expect(getInitials("John")).toEqual("J")
+	})
+
+	it("should return the initials of two names", () => {
+		expect(getInitials("John Doe")).toEqual("JD")
+	})
+
+	it("should return the initials of three names", () => {
+		expect(getInitials("John Adam Doe")).toEqual("JAD")
+	})
+
+	it("should return the initials of four names", () => {
+		expect(getInitials("John Adam Doe Smith")).toEqual("JADS")
+	})
+
+	it("should return the initials of two names with limit of 1", () => {
+		expect(getInitials("John Doe", 1)).toEqual("J")
+	})
+
+	it("should return the initials of three names with limit of 2", () => {
+		expect(getInitials("John Adam Doe", 2)).toEqual("JA")
+	})
+
+	it("should return the initials of four names with limit of 3", () => {
+		expect(getInitials("John Adam Doe Smith", 3)).toEqual("JAD")
 	})
 })
