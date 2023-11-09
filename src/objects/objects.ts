@@ -3,6 +3,15 @@
  */
 
 /**
+ * Checks if an object is empty (has no own properties).
+ * @param obj - The object to check.
+ * @returns `true` if the object is empty, `false` otherwise.
+ */
+export const isEmptyObject = (obj: Record<string, unknown> = {}) => {
+  return obj.constructor === Object && !Object.entries(obj).length
+}
+
+/**
  * Sorts two objects based on their keys' positions in an array of keys.
  * @param keys - An array of keys to sort the objects by.
  * @param a - The first object to compare.
