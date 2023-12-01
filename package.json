@@ -1,7 +1,7 @@
 {
   "name": "@curiousleaf/utils",
   "description": "A lightweight set of utilities",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "module": "./dist/index.js",
   "type": "module",

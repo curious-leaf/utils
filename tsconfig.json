@@ -12,6 +12,7 @@
     "composite": true,
     "strict": true,
     "downlevelIteration": true,
+    "noUncheckedIndexedAccess": true,
     "skipLibCheck": true,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
