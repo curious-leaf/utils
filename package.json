@@ -1,7 +1,7 @@
 {
   "name": "@curiousleaf/utils",
   "description": "A lightweight set of utilities",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "module": "./dist/index.js",
   "type": "module",
@@ -20,6 +20,6 @@
   "devDependencies": {
     "@biomejs/biome": "latest",
     "bun-types": "latest",
-    "typescript": "latest"
+    "typescript": "^5.3.2"
   }
 }

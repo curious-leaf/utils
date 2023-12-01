@@ -66,16 +66,16 @@ export const formatBytes = (bytes: number, decimals = 0): string => {
  * @param mimeType - The MIME type string to format.
  * @returns The formatted MIME type string.
  */
-export const formatMimeType = (mimeType: string): string | null => {
+export const formatMimeType = (mimeType: string): string | undefined => {
   const [, subtype] = mimeType.split("/")
-  let type: string
+  let type: string | undefined
 
   switch (subtype) {
     case "*":
-      return null
+      return undefined
     default:
       type = subtype
   }
 
-  return type.toUpperCase()
+  return type?.toUpperCase()
 }
