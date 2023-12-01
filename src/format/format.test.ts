@@ -1,9 +1,9 @@
 import {
-	formatBytes,
-	formatCurrency,
-	formatMimeType,
-	formatPrice,
-	formatToDecimals,
+  formatBytes,
+  formatCurrency,
+  formatMimeType,
+  formatPrice,
+  formatToDecimals,
 } from "./format"
 import { describe, expect, it } from "bun:test"
 
@@ -58,6 +58,6 @@ describe("formatMimeType", () => {
 	it("formats a MIME type string", () => {
 		expect(formatMimeType("image/png")).toBe("PNG")
 		expect(formatMimeType("application/json")).toBe("JSON")
-		expect(formatMimeType("text/*")).toBe(null)
+		expect(formatMimeType("text/*")).toBe(undefined)
 	})
 })
