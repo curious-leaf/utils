@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: "18"
       - uses: oven-sh/setup-bun@v1
-      - run: bun test && bun run build
+      - run: bun i && bun test && bun run build
       - uses: JS-DevTools/npm-publish@v2
         with:
           access: "public"
