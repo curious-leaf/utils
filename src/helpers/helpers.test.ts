@@ -1,14 +1,13 @@
 import {
-	capitalize,
-	convertNewlines,
-	getExcerpt,
-	getInitials,
-	isCuid,
-	isTruthy,
-	range,
-	stripHtml,
-	toSlugCase,
-	toTitleCase,
+  capitalize,
+  convertNewlines,
+  getExcerpt,
+  getInitials,
+  isCuid,
+  isTruthy,
+  range, stripHtml,
+  toSlugCase,
+  toTitleCase
 } from "./helpers"
 import { describe, expect, it } from "bun:test"
 

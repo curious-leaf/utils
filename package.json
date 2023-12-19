@@ -1,7 +1,7 @@
 {
   "name": "@curiousleaf/utils",
   "description": "A lightweight set of utilities",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "module": "./dist/index.js",
   "type": "module",
@@ -16,7 +16,9 @@
   "scripts": {
     "build": "bun build ./index.ts --outdir ./dist"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@uiw/color-convert": "1.4.3"
+  },
   "devDependencies": {
     "@biomejs/biome": "latest",
     "bun-types": "latest",

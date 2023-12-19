@@ -3,12 +3,6 @@
  */
 
 /**
- * Generates an array of numbers
- * @param start The start of the range
- * @param end The end of the range
- * @returns An array of numbers
- */
-/**
  * A utility function that generates an array of numbers within a specified range.
  * @param start - The starting number of the range.
  * @param end - The ending number of the range.
@@ -18,6 +12,14 @@ export const range = (start: number, end: number) => {
 	const length = end - start + 1
 
 	return Array.from({ length }, (_, idx) => idx + start)
+}
+
+/**
+ * Delays the execution of the function by the specified amount of time.
+ * @param delay - The amount of time to delay the execution of the function, in milliseconds.
+ */
+export const sleep = async (delay: number) => {
+  new Promise((resolve) => setTimeout(resolve, delay))
 }
 
 /**

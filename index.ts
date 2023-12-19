@@ -1,3 +1,4 @@
+export * from "./src/colors/colors"
 export * from "./src/errors/errors"
 export * from "./src/events/events"
 export * from "./src/format/format"
