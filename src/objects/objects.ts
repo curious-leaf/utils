@@ -19,16 +19,16 @@ export const isEmptyObject = (obj: Record<string, unknown> = {}) => {
  * @returns A number indicating the sort order of the two objects.
  */
 export const sortObjectKeys = (keys: string[]) => {
-	return (a: Record<string, unknown>, b: Record<string, unknown>) => {
-		const aIndex = keys.indexOf(Object.keys(a)[0] ?? "")
-		const bIndex = keys.indexOf(Object.keys(b)[0] ?? "")
+  return (a: Record<string, unknown>, b: Record<string, unknown>) => {
+    const aIndex = keys.indexOf(Object.keys(a)[0] ?? "")
+    const bIndex = keys.indexOf(Object.keys(b)[0] ?? "")
 
-		if (aIndex === -1 && bIndex === -1) return 0
-		if (aIndex === -1) return 1
-		if (bIndex === -1) return -1
+    if (aIndex === -1 && bIndex === -1) return 0
+    if (aIndex === -1) return 1
+    if (bIndex === -1) return -1
 
-		return aIndex - bIndex
-	}
+    return aIndex - bIndex
+  }
 }
 
 /**
@@ -38,12 +38,12 @@ export const sortObjectKeys = (keys: string[]) => {
  * @returns - A new object with the sorted keys.
  */
 export const sortObject = <T extends Record<K, unknown>, K extends keyof T>(
-	obj: T,
-	comparator?: (a: unknown, b: unknown) => number,
+  obj: T,
+  comparator?: (a: unknown, b: unknown) => number,
 ) => {
-	return Object.keys(obj)
-		.sort(comparator)
-		.reduce((result, key) => {
-			return { ...result, [key as K]: obj[key as K] }
-		}, {} as T)
+  return Object.keys(obj)
+    .sort(comparator)
+    .reduce((result, key) => {
+      return { ...result, [key as K]: obj[key as K] }
+    }, {} as T)
 }

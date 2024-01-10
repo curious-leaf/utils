@@ -12,9 +12,11 @@
 export const keepNumberInRange = (value: number, min?: number, max?: number) => {
   if (min !== undefined && max !== undefined) {
     return Math.min(Math.max(value, min), max)
-  } if (min !== undefined) {
+  }
+  if (min !== undefined) {
     return Math.max(value, min)
-  } if (max !== undefined) {
+  }
+  if (max !== undefined) {
     return Math.min(value, max)
   }
 

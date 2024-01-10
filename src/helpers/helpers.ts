@@ -9,9 +9,9 @@
  * @returns An array of numbers within the specified range.
  */
 export const range = (start: number, end: number) => {
-	const length = end - start + 1
+  const length = end - start + 1
 
-	return Array.from({ length }, (_, idx) => idx + start)
+  return Array.from({ length }, (_, idx) => idx + start)
 }
 
 /**
@@ -28,7 +28,7 @@ export const sleep = async (delay: number) => {
  * @return The capitalized string.
  */
 export const capitalize = (value: string) => {
-	return value.charAt(0).toUpperCase() + value.slice(1)
+  return value.charAt(0).toUpperCase() + value.slice(1)
 }
 
 /**
@@ -37,7 +37,7 @@ export const capitalize = (value: string) => {
  * @returns The converted string.
  */
 export const toTitleCase = (string: string | undefined) => {
-	return string?.toLowerCase().split(" ").map(capitalize).join(" ")
+  return string?.toLowerCase().split(" ").map(capitalize).join(" ")
 }
 
 /**
@@ -46,15 +46,15 @@ export const toTitleCase = (string: string | undefined) => {
  * @returns The converted string.
  */
 export const toSlugCase = (string?: string) => {
-	let slug = string || ""
+  let slug = string || ""
 
-	slug = slug.toLowerCase()
-	slug = slug.replace(/^\s+|\s+$/g, "")
-	slug = slug.replace(/[^a-z0-9 -]/g, "")
-	slug = slug.replace(/\s+/g, "-")
-	slug = slug.replace(/-+/g, "-")
+  slug = slug.toLowerCase()
+  slug = slug.replace(/^\s+|\s+$/g, "")
+  slug = slug.replace(/[^a-z0-9 -]/g, "")
+  slug = slug.replace(/\s+/g, "-")
+  slug = slug.replace(/-+/g, "-")
 
-	return encodeURI(slug)
+  return encodeURI(slug)
 }
 
 /**
@@ -63,7 +63,7 @@ export const toSlugCase = (string?: string) => {
  * @returns string without html tags
  */
 export const stripHtml = (string: string) => {
-	return string.replace(/<[^>]*>?/gm, "")
+  return string.replace(/<[^>]*>?/gm, "")
 }
 
 /**
@@ -73,7 +73,7 @@ export const stripHtml = (string: string) => {
  * @returns string with newlines converted to specified element
  */
 export const convertNewlines = (string: string, replacement = " ") => {
-	return string.replace(/\n+/g, replacement)
+  return string.replace(/\n+/g, replacement)
 }
 
 /**
@@ -83,18 +83,18 @@ export const convertNewlines = (string: string, replacement = " ") => {
  * @returns An excerpt from the string
  */
 export const getExcerpt = (content: string | undefined | null, length = 250) => {
-	if (!content) {
-		return null
-	}
+  if (!content) {
+    return null
+  }
 
-	const plainText = convertNewlines(stripHtml(content))
-	const text = plainText.slice(0, length).trim()
+  const plainText = convertNewlines(stripHtml(content))
+  const text = plainText.slice(0, length).trim()
 
-	if (text.length < plainText.length) {
-		return `${text}...`
-	}
+  if (text.length < plainText.length) {
+    return `${text}...`
+  }
 
-	return text
+  return text
 }
 
 /**
@@ -103,7 +103,7 @@ export const getExcerpt = (content: string | undefined | null, length = 250) => 
  * @returns A boolean indicating if the string is a cuid
  */
 export const isCuid = (id: string) => {
-	return id.length === 25 && id[0] === "c"
+  return id.length === 25 && id[0] === "c"
 }
 
 /**
@@ -112,7 +112,7 @@ export const isCuid = (id: string) => {
  * @returns A boolean indicating if the value is truthy
  */
 export function isTruthy<T>(value?: T | undefined | null | false): value is T {
-	return !!value
+  return !!value
 }
 
 /**
@@ -122,16 +122,19 @@ export function isTruthy<T>(value?: T | undefined | null | false): value is T {
  * @returns The initials from the string
  */
 export const getInitials = (value?: string | null, limit = 0) => {
-	if (!value) {
-		return ""
-	}
+  const val = (value || "").trim()
 
-	const values = value.trim().split(" ").filter(isTruthy)
-	const initials = values.map((name) => name.charAt(0).toUpperCase()).join("")
+  // If the value is empty, a single character, or two characters (already initials)
+  if (val.length === 0 || val.length === 1 || val.length === 2) {
+    return val.toUpperCase()
+  }
 
-	if (limit > 0) {
-		return initials.slice(0, limit)
-	}
+  const values = val.split(" ").filter(isTruthy)
+  const initials = values.map((name) => name.charAt(0).toUpperCase()).join("")
 
-	return initials
+  if (limit > 0) {
+    return initials.slice(0, limit)
+  }
+
+  return initials
 }
