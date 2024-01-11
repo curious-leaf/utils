@@ -1,7 +1,7 @@
 {
   "name": "@curiousleaf/utils",
   "description": "A lightweight set of utilities",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "license": "MIT",
   "module": "./dist/index.js",
   "type": "module",
@@ -14,7 +14,7 @@
     "build": "bun build ./index.ts --outdir ./dist",
     "format": "prettier --write \"./**/*.{js,ts,json,md}\""
   },
-  "dependencies": {
+  "peerDependencies": {
     "@uiw/color-convert": "1.4.3"
   },
   "devDependencies": {
