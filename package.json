@@ -3,15 +3,17 @@
   "description": "A lightweight set of utilities",
   "version": "1.0.12",
   "license": "MIT",
-  "module": "./dist/index.js",
   "type": "module",
+  "main": "./dist/index.ts",
+  "types": "./dist/index.d.ts",
   "author": {
     "name": "CuriousLeaf",
     "url": "https://curiousleaf.com"
   },
   "repository": "curious-leaf/utils",
   "scripts": {
-    "build": "bun build ./index.ts --outdir ./dist",
+    "build": "bun build ./index.ts --outdir ./dist && bun run build:declaration",
+    "build:declaration": "tsc --emitDeclarationOnly",
     "format": "prettier --write \"./**/*.{js,ts,json,md}\""
   },
   "dependencies": {
