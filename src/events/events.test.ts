@@ -2,8 +2,6 @@
 
 import { describe } from "bun:test"
 
-const eventName = "test-event"
-
 describe("Events utility functions", () => {
   // describe("subscribe", () => {
   // 	it("adds a listener to the specified event", () => {
