@@ -4,17 +4,19 @@
   "version": "1.0.13",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/index.ts",
-  "types": "./dist/index.d.ts",
   "author": {
-    "name": "CuriousLeaf",
-    "url": "https://curiousleaf.com"
+    "name": "Piotr Kulpinski",
+    "email": "piotr@kulpinski.pl",
+    "url": "https://kulpinski.co"
   },
   "repository": "curious-leaf/utils",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
     "build": "bun build ./index.ts --outdir ./dist && bun run build:declaration",
     "build:declaration": "tsc --emitDeclarationOnly",
-    "format": "prettier --write \"./**/*.{js,ts,json,md}\""
+    "format": "prettier --write \"./**/*.{js,ts,json,md}\"",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx . --fix --quiet"
   },
   "dependencies": {
     "@uiw/color-convert": "^2.0.6"

@@ -1,3 +1,5 @@
+import { describe, expect, it } from "bun:test"
+
 import {
   formatBytes,
   formatCurrency,
@@ -5,7 +7,6 @@ import {
   formatPrice,
   formatToDecimals,
 } from "./format"
-import { describe, expect, it } from "bun:test"
 
 describe("formatCurrency", () => {
   it("formats a number as currency", () => {

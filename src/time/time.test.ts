@@ -1,5 +1,6 @@
-import { formatDate, formatDateOrTime, formatDateTime, formatTime, getReadTime } from "./time"
 import { describe, expect, it } from "bun:test"
+
+import { formatDate, formatDateOrTime, formatDateTime, formatTime, getReadTime } from "./time"
 
 const timestamp = "2022-01-01 00:00:00.000"
 

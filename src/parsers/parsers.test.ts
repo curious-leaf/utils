@@ -1,5 +1,6 @@
-import { maybeParseJson, maybeStringifyJson } from "./parsers"
 import { describe, expect, it } from "bun:test"
+
+import { maybeParseJson, maybeStringifyJson } from "./parsers"
 
 describe("maybeParseJson", () => {
   it("parses a valid JSON string", () => {

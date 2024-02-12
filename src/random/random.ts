@@ -25,7 +25,7 @@ export const getRandomString = (): string => {
  * @param obj - The object to get a random property value from.
  * @returns A random property value from the object.
  */
-export const getRandomProperty = <T>(obj: { [key: string]: T }): T => {
+export const getRandomProperty = <T>(obj: Record<string, T>): T => {
   const keys = Object.keys(obj)
   const randomKey = keys[Math.floor(keys.length * Math.random())]!
 

@@ -1,5 +1,6 @@
-import { addHttp, isExternalLink, removeHttp, removeTrailingSlash } from "./http"
 import { describe, expect, it } from "bun:test"
+
+import { addHttp, isExternalLink, removeHttp, removeTrailingSlash } from "./http"
 
 describe("addHttp", () => {
   it("adds https protocol to url", () => {

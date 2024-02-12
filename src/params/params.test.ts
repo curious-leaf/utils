@@ -1,5 +1,6 @@
-import { getCurrentPage, getPageLink } from "./params"
 import { describe, expect, it } from "bun:test"
+
+import { getCurrentPage, getPageLink } from "./params"
 
 describe("getCurrentPage", () => {
   it("returns 1 if page is not provided", () => {

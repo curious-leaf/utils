@@ -1,5 +1,6 @@
-import { keepNumberInRange, parseNumericValue } from "./numbers"
 import { describe, expect, it } from "bun:test"
+
+import { keepNumberInRange, parseNumericValue } from "./numbers"
 
 describe("numbers.ts", () => {
   describe("keepNumberInRange", () => {

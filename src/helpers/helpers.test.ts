@@ -1,3 +1,5 @@
+import { describe, expect, it } from "bun:test"
+
 import {
   capitalize,
   convertNewlines,
@@ -10,7 +12,6 @@ import {
   toSlugCase,
   toTitleCase,
 } from "./helpers"
-import { describe, expect, it } from "bun:test"
 
 describe("range", () => {
   it("generates an array of numbers", () => {

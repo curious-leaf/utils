@@ -1,5 +1,6 @@
-import { isEmptyObject, sortObject, sortObjectKeys } from "./objects"
 import { describe, expect, it } from "bun:test"
+
+import { isEmptyObject, sortObject, sortObjectKeys } from "./objects"
 
 describe("isEmptyObject", () => {
   it("returns true for an empty object", () => {
