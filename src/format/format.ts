@@ -10,13 +10,28 @@ type Currency = Intl.NumberFormatOptions["currency"]
  * @param currency The currency to format the amount in. Defaults to 'USD'.
  * @returns The formatted currency string.
  */
-export const formatCurrency = (amount: number, currency: Currency = "USD"): string => {
+export const formatCurrency = (amount: number, currency: Currency = "USD") => {
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
   })
 
   return formatter.format(amount).replace(/\D00(?=\D*$)/, "")
+}
+
+/**
+ * Formats a given amount with an interval to a currency string.
+ * @param amount The amount of money to format.
+ * @param interval The interval, either 'month' or 'year'. Defaults to 'month'.
+ * @param currency The currency to format the amount in. Defaults to 'USD'.
+ * @returns The formatted currency string per interval.
+ */
+export const formatAmount = (
+  amount: number,
+  interval: "month" | "year" = "month",
+  currency: Currency = "USD",
+) => {
+  return formatCurrency(amount / (interval === "year" ? 12 : 1), currency)
 }
 
 /**

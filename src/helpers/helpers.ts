@@ -58,6 +58,15 @@ export const toSlugCase = (string?: string) => {
 }
 
 /**
+ * Returns a label for the first search key shortcut found.
+ * @returns The label for the shortcut.
+ */
+export const getShortcutLabel = ({ key, metaKey }: { key: string; metaKey?: boolean }) => {
+  const label = `${metaKey ? "⌘" : ""}${key.toUpperCase()}`
+  return label
+}
+
+/**
  * Strip html tags from a string
  * @param string - string to strip tags from
  * @returns string without html tags

@@ -5,6 +5,7 @@ import {
   convertNewlines,
   getExcerpt,
   getInitials,
+  getShortcutLabel,
   isCuid,
   isTruthy,
   range,
@@ -42,6 +43,23 @@ describe("toSlugCase", () => {
     expect(toSlugCase("The Quick Brown Fox")).toEqual("the-quick-brown-fox")
     expect(toSlugCase("jumping jacks")).toEqual("jumping-jacks")
     expect(toSlugCase("")).toEqual("")
+  })
+})
+
+describe("getShortcutLabel", () => {
+  it("returns the uppercase key if metaKey is not provided", () => {
+    expect(getShortcutLabel({ key: "a" })).toEqual("A")
+    expect(getShortcutLabel({ key: "z" })).toEqual("Z")
+  })
+
+  it("returns the uppercase key with metaKey symbol if metaKey is true", () => {
+    expect(getShortcutLabel({ key: "a", metaKey: true })).toEqual("⌘A")
+    expect(getShortcutLabel({ key: "z", metaKey: true })).toEqual("⌘Z")
+  })
+
+  it("returns the uppercase key without metaKey symbol if metaKey is false", () => {
+    expect(getShortcutLabel({ key: "a", metaKey: false })).toEqual("A")
+    expect(getShortcutLabel({ key: "z", metaKey: false })).toEqual("Z")
   })
 })
 
