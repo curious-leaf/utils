@@ -4,9 +4,6 @@ export type WithRequired<Type, Key extends keyof Type> = Type & {
   [Prop in Key]-?: Type[Prop]
 }
 
-export type ArrayElement<ArrayType extends readonly unknown[]> =
-  ArrayType extends readonly (infer ElementType)[] ? ElementType : never
-
 export type DeepIdx<T, K extends string> = K extends ""
   ? T
   : K extends keyof T

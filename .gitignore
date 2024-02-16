@@ -117,6 +117,9 @@ out
 .nuxt
 dist
 
+# Turborepo
+.turbo
+
 # Gatsby files
 
 .cache/
