@@ -59,6 +59,6 @@ describe("formatMimeType", () => {
   it("formats a MIME type string", () => {
     expect(formatMimeType("image/png")).toBe("PNG")
     expect(formatMimeType("application/json")).toBe("JSON")
-    expect(formatMimeType("text/*")).toBe(undefined)
+    expect(formatMimeType("text/*")).toBeUndefined()
   })
 })
