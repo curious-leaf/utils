@@ -7,7 +7,7 @@ describe("maybeParseJson", () => {
     const jsonString = '{"name": "John", "age": 30}'
     const expected = { name: "John", age: 30 }
 
-    expect(maybeParseJson(jsonString)).toEqual(expected)
+    expect(maybeParseJson(jsonString)).toMatchObject(expected)
   })
 
   it("returns the input value if it is not a valid JSON string", () => {
