@@ -15,8 +15,7 @@
   "scripts": {
     "build": "bun build ./src/index.ts --outdir ./dist && bun run build:declaration",
     "build:declaration": "tsc --emitDeclarationOnly",
-    "format": "prettier --write \"./**/*.{js,ts,json,md}\"",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx . --fix --quiet"
+    "format": "biome format --write ."
   },
   "dependencies": {
     "@uiw/color-convert": "^2.0.6"
