@@ -15,7 +15,8 @@
   "scripts": {
     "build": "bun build ./src/index.ts --outdir ./dist && bun run build:declaration",
     "build:declaration": "tsc --emitDeclarationOnly",
-    "format": "biome format --write ."
+    "lint": "bun biome lint .",
+    "format": "bun biome format --write ."
   },
   "dependencies": {
     "@uiw/color-convert": "^2.0.6"
