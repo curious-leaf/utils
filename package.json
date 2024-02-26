@@ -1,7 +1,7 @@
 {
   "name": "@curiousleaf/utils",
   "description": "A lightweight set of utilities",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "license": "MIT",
   "type": "module",
   "author": {
@@ -19,7 +19,7 @@
     "format": "bun biome format --write ."
   },
   "dependencies": {
-    "@uiw/color-convert": "^2.0.6"
+    "@uiw/color-convert": "^2.0.9"
   },
   "devDependencies": {
     "@babel/runtime": "^7.23.8",
