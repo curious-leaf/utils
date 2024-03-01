@@ -1,7 +1,6 @@
 import { describe, expect, it } from "bun:test"
 
 import {
-  capitalize,
   convertNewlines,
   getExcerpt,
   getInitials,
@@ -11,8 +10,6 @@ import {
   range,
   splitArrayChunks,
   stripHtml,
-  toSlugCase,
-  toTitleCase,
 } from "./helpers"
 
 describe("range", () => {
@@ -20,30 +17,6 @@ describe("range", () => {
     expect(range(1, 5)).toEqual([1, 2, 3, 4, 5])
     expect(range(0, 0)).toEqual([0])
     expect(range(-3, 3)).toEqual([-3, -2, -1, 0, 1, 2, 3])
-  })
-})
-
-describe("capitalize", () => {
-  it("capitalizes the first letter of a string", () => {
-    expect(capitalize("hello")).toEqual("Hello")
-    expect(capitalize("world")).toEqual("World")
-    expect(capitalize("")).toEqual("")
-  })
-})
-
-describe("toTitleCase", () => {
-  it("converts a string to title case", () => {
-    expect(toTitleCase("the quick brown fox")).toEqual("The Quick Brown Fox")
-    expect(toTitleCase("jUmPinG jAcKs")).toEqual("Jumping Jacks")
-    expect(toTitleCase("")).toEqual("")
-  })
-})
-
-describe("toSlugCase", () => {
-  it("converts a string to slug case", () => {
-    expect(toSlugCase("The Quick Brown Fox")).toEqual("the-quick-brown-fox")
-    expect(toSlugCase("jumping jacks")).toEqual("jumping-jacks")
-    expect(toSlugCase("")).toEqual("")
   })
 })
 

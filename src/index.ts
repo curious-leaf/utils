@@ -24,6 +24,10 @@ export type ValidatePath<T, K extends string> = K extends ""
         : Extract<keyof T, string>
       : Extract<keyof T, string>
 
+// External exports
+export * from "scule"
+
+// Internal exports
 export * from "./colors/colors"
 export * from "./errors/errors"
 export * from "./events/events"

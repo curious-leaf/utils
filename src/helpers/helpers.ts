@@ -23,41 +23,6 @@ export const sleep = async (delay: number) => {
 }
 
 /**
- * Capitalizes the first letter of a string.
- * @param value - The string to capitalize.
- * @return The capitalized string.
- */
-export const capitalize = (value: string) => {
-  return value.charAt(0).toUpperCase() + value.slice(1)
-}
-
-/**
- * Converts a string to title case.
- * @param string - The string to convert.
- * @returns The converted string.
- */
-export const toTitleCase = (string: string | undefined) => {
-  return string?.toLowerCase().split(" ").map(capitalize).join(" ")
-}
-
-/**
- * Converts a string to slug case.
- * @param string - The string to convert.
- * @returns The converted string.
- */
-export const toSlugCase = (string?: string) => {
-  let slug = string || ""
-
-  slug = slug.toLowerCase()
-  slug = slug.replace(/^\s+|\s+$/g, "")
-  slug = slug.replace(/[^a-z0-9 -]/g, "")
-  slug = slug.replace(/\s+/g, "-")
-  slug = slug.replace(/-+/g, "-")
-
-  return encodeURI(slug)
-}
-
-/**
  * Returns a label for the first search key shortcut found.
  * @returns The label for the shortcut.
  */
