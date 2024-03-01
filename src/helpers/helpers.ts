@@ -167,3 +167,19 @@ export const toBase64 = (file: File): Promise<string> => {
     reader.onerror = error => reject(error)
   })
 }
+
+/**
+ * Splits an array into chunks of a specified size.
+ * @param array - The array to split into chunks.
+ * @param chunkSize - The size of each chunk.
+ * @returns An array of arrays, each containing a chunk of the original array.
+ */
+export const splitArrayChunks = <T>(array: T[], chunkSize: number) => {
+  const chunks: T[][] = []
+
+  for (let i = 0; i < array.length; i += chunkSize) {
+    chunks.push(array.slice(i, i + chunkSize))
+  }
+
+  return chunks
+}
