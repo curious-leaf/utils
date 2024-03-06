@@ -26,6 +26,7 @@ export type ValidatePath<T, K extends string> = K extends ""
 
 // External exports
 export * from "scule"
+export { default as slugify } from "@sindresorhus/slugify"
 
 // Internal exports
 export * from "./colors/colors"
